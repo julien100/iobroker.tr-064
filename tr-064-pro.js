@@ -418,7 +418,7 @@ function updateAll(cb) {
             devStates.set('reboot', false);
             devices.update(function(err) {
                 if (adapter.config.pollingInterval) {
-                    setTimeout(updateAll, adapter.config.pollingInterval*1000);
+                    setTimeout(updateAll, adapter.config.pollingInterval);
                 }
             });
             return;
@@ -441,6 +441,7 @@ function updateAll(cb) {
 
 
 function normalizeConfigVars() {
+    adapter.log("normalizeConfigVars");
     adapter.config.pollingInterval = adapter.config.pollingInterval >> 0;
     adapter.config.port = adapter.config.port >> 0;
     adapter.config.useCallMonitor = !!(adapter.config.useCallMonitor >> 0);

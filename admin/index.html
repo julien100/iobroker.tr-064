@@ -99,6 +99,8 @@
 
     // the function loadSettings has to exist ...
     function load(settings, onChange) {
+        log("load");
+        log(settings);
         $("#dialog-search").dialog({
             autoOpen: false,
             modal: true,
