@@ -441,7 +441,7 @@ function updateAll(cb) {
 
 
 function normalizeConfigVars() {
-    adapter.log("normalizeConfigVars");
+    adapter.log.debug("normalizeConfigVars");
     adapter.config.pollingInterval = adapter.config.pollingInterval >> 0;
     adapter.config.port = adapter.config.port >> 0;
     adapter.config.useCallMonitor = !!(adapter.config.useCallMonitor >> 0);
