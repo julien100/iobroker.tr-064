@@ -451,7 +451,7 @@ function normalizeConfigVars() {
 
 
 function main() {
-
+    adapter.log.debug("starting -----------------")
     devStates = new devices.CDevice(0, '');
     devStates.setDevice(CHANNEL_STATES, {common: {name: CHANNEL_STATES, role: 'channel'}, native: {} });
 
