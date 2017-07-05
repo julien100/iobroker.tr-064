@@ -1,7 +1,7 @@
 {
-  "name": "iobroker.tr-064",
+  "name": "iobroker.tr-064-pro",
   "version": "0.1.7",
-  "description": "ioBroker tr-064 Adapter",
+  "description": "ioBroker tr-064-pro Adapter",
   "author": {
     "name": "soef",
     "email": "soef@gmx.net"
@@ -12,16 +12,16 @@
       "email": "soef@gmx.net"
     }
   ],
-  "homepage": "https://github.com/soef/iobroker.tr-064",
+  "homepage": "https://github.com/julien100/iobroker.tr-064",
   "license": "MIT",
   "keywords": [
-    "tr-064",
+    "tr-064-pro",
     "fritz.box",
     "avm"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/soef/iobroker.tr-064"
+    "url": "https://github.com/julien100/iobroker.tr-064"
   },
   "dependencies": {
     "soef": "^0.1.3",

@@ -20,32 +20,6 @@ var adapter = soef.Adapter(
     }
 );
 
-//var adapter = utils.adapter({
-//    name: 'tr-064',
-//
-//    unload: function (callback) {
-//        try {
-//            callback();
-//        } catch (e) {
-//            callback();
-//        }
-//    },
-//    //discover: function (callback) {
-//    //},
-//    //install: function (callback) {
-//    //},
-//    //uninstall: function (callback) {
-//    //},
-//    objectChange: function (id, obj) {
-//    },
-//    stateChange: function (id, state) {
-//        if (state && !state.ack) {
-//            onStateChange(id, state);
-//        }
-//    },
-//    message: onMessage,
-//    ready: function () { soef.main (adapter, main) }
-//});
 
 
 const CHANNEL_STATES = 'states',
@@ -497,4 +471,3 @@ function main() {
 
     adapter.subscribeStates('*');
 }
-

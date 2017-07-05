@@ -1,17 +1,17 @@
 {
   "common": {
-    "name": "tr-064",
+    "name": "tr-064-pro",
     "version": "0.1.7",
-    "title": "TR 064",
-    "desc": "TR 064",
+    "title": "TR 064 Pro",
+    "desc": "TR 064 Pro",
     "platform": "Javascript/Node.js",
     "keywords": [
-      "tr-064",
+      "tr-064 pro",
       "fritz.box",
       "avm"
     ],
     "mode": "daemon",
-    "icon": "tr-064.png",
+    "icon": "tr-064-pro.png",
     "extIcon": "https://raw.githubusercontent.com/soef/iobroker.tr-064/master/admin/tr-064.png",
     "loglevel": "info",
     "nondeletable": true,
