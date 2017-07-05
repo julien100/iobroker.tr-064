@@ -16,7 +16,7 @@ var adapter = soef.Adapter(
     main,
     onMessage,
     {
-        name: 'tr-064'
+        name: 'tr-064-pro'
     }
 );
 
