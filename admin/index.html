@@ -32,7 +32,7 @@
             "ru": "Сразу после сохранения настроек драйвер перезапуститься с новыми значениями"
         },
         "devices": {
-            "de": "Geräte-liste",
+            "de": "Geräteliste",
             "en": "Dives list"
         },
         "AddDevice": {
@@ -56,7 +56,7 @@
             "en": "Port"
         },
         "pollIntervall": {
-            "de": "Pollintervall",
+            "de": "Pollintervall in ms",
             "en": "Poll Intervall"
         },
         "Find a device": {
@@ -182,7 +182,7 @@
             $("#dialog-search").dialog('option', 'title', translateWord("looking for device"));
             $("#dialog-search").dialog("open");
 
-            sendTo('tr-064.' + instance, 'discovery', 5000, function (result) {
+            sendTo('tr-064-pro.' + instance, 'discovery', 5000, function (result) {
                 try {
                     var arr = JSON.parse(result);
                     if (arr.error) {
@@ -301,7 +301,7 @@
                 <td class="translate">Use phonebook</td><td><input id="usePhonebook" class="value" type="checkbox"></td>
             </tr>
             <tr>
-                <td class="translate">Polling interval (sec)</td><td width=5><td><input type="text" id="pollingInterval" class="value"></td>
+                <td class="translate">Polling interval (ms)</td><td width=5><td><input type="text" id="pollingInterval" class="value"></td>
             </tr>
 
             <!--tr><td class="translate">Use CallMonitor</td><td><input id="useCallMonitor" class="value" type="checkbox"></td></tr>
