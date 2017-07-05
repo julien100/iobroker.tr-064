@@ -13,8 +13,8 @@
     "mode": "daemon",
     "icon": "tr-064-pro.png",
     "extIcon": "https://raw.githubusercontent.com/soef/iobroker.tr-064/master/admin/tr-064.png",
-    "loglevel": "info",
-    "nondeletable": true,
+    "loglevel": "debug",
+    "nondeletable": false,
     "type": "hardware",
     "enabled": true,
     "messagebox": true
