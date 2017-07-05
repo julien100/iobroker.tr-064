@@ -17,82 +17,6 @@
 <!-- you have to define 2 functions in the global scope: -->
 <script type="text/javascript">
 
-    // Dictionary (systemDictionary is global variable from adapter-settings.js)
-    systemDictionary = {
-        "WiFi Light": {
-            "de": "WiFi Light Einstellungen",
-            "ru": "Пример"
-        },
-        "Settings": {
-            "de": "Einstellungen",
-            "ru": "Settings"
-        },
-        "on save adapter restarts with new config immediately": {
-            "de": "Beim Speichern der Einstellungen wird der Adapter automatisch neu gestartet.",
-            "ru": "Сразу после сохранения настроек драйвер перезапуститься с новыми значениями"
-        },
-        "devices": {
-            "de": "Geräteliste",
-            "en": "Dives list"
-        },
-        "AddDevice": {
-            "de": "Zum Hinzufügen +-Button betätigen",
-            "en": "Add #-Button to add device"
-        },
-        "name": {
-            "de": "Bezeichnung",
-            "en": "Name"
-        },
-        "ip": {
-            "de": "IP",
-            "en": "IP"
-        },
-        "type": {
-            "de": "Typ",
-            "en": "Type"
-        },
-        "port": {
-            "de": "Port",
-            "en": "Port"
-        },
-        "pollIntervall": {
-            "de": "Pollintervall in ms",
-            "en": "Poll Intervall"
-        },
-        "Find a device": {
-            "de": "Gerät suchen",
-            "en": "Find a device"
-        },
-        "Cannot find any device": {
-            "de": "Kein neues Gerät gefunden",
-            "en": "Cannot find new devices"
-        },
-        "Please wait, looking for devices...": {
-            "de": "Bitte warten...",
-            "en": "Please wait..."
-        },
-        "Enable adapter first": {
-            "de": "Adapter TR-064 ist nicht gestartet, bitte starten bzw. aktivieren!",
-            "en": "Enable adapter first"
-        },
-        "Select a device": {
-            "de": "Geräte auswählen",
-            "en": "Select a device"
-        },
-        "looking for device": {
-            "de": "Suche Geräte",
-            "en": "Looking for devices"
-        },
-        "TR 064 adapter settings": {"de": "TR 064", "ru": "Пример"},
-        "IP":                    {"en": "IP", "de": "IP", "ru": "Тест 1"},
-        "User":                    {"en": "User", "de": "Benutzer", "ru": "Тест 2"},
-        "Password": { "en": "Password", "de": "Passswort", "ru": "Тест 2" },
-        "Polling interval (ms)": { "en": "Polling interval (ms)", "de": "Polling interval (ms)", "ru": "Тест 2"
-        }
-
-    };
-
-
     var devices = [];
     var active = false;
     var g_onChange;
@@ -174,12 +98,12 @@
 
         $('#find').button().click(function () {
             if (!active) {
-                showMessage(_(translateWord('Enable adapter first')), 'Warning', 'info');
+                showMessage(_('Enable adapter first'), 'Warning', 'info');
                 return;
             }
 
-            $("#dialog-search").html(translateWord('Please wait, looking for devices...'));
-            $("#dialog-search").dialog('option', 'title', translateWord("looking for device"));
+            $("#dialog-search").html('Please wait, looking for devices...');
+            $("#dialog-search").dialog('option', 'title', "looking for device");
             $("#dialog-search").dialog("open");
 
             sendTo('tr-064-pro.' + instance, 'discovery', 5000, function (result) {
@@ -191,9 +115,9 @@
                         return;
                     }
                     if (!arr.length) {
-                        var popup = '<table class="msgTable"><tr><td>' + translateWord('Cannot find any device') + '</span></td></tr></table>';
+                        var popup = '<table class="msgTable"><tr><td>' + 'Cannot find any device' + '</span></td></tr></table>';
                     } else {
-                        $("#dialog-search").dialog('option', 'title', translateWord("Select a device"));
+                        $("#dialog-search").dialog('option', 'title', "Select a device");
                         var popup = '<table class="hoverTable"><tr><th>Name</th><th>IP</th><th>MAC address</th></tr>';
                         arr.forEach(function (element, index, array) {
                             var s = JSON.stringify(element).replace(/"/g, '\'');
@@ -282,40 +206,33 @@
         <td style="padding-top: 20px;padding-left: 10px"><h3>TR-064 adapter settings!!!!!!!</h3></td>
     </table>
 
-    <!--<h1 class="translate">Interval</h1>-->
     <div id="settings">
         <table>
             <tr>
-                <td class="translate">IP</td><td width=5></td><td><input type="text" id="ip" class="value"></td>
+                <td>IP</td><td width=5></td><td><input type="text" id="ip" class="value"></td>
                 <td width=60></td>
-                <td class="translate">Use CallMonitor</td><td><input id="useCallMonitor" class="value" type="checkbox"></td>
+                <td>Use CallMonitor</td><td><input id="useCallMonitor" class="value" type="checkbox"></td>
             </tr>
             <tr>
-                <td class="translate">User</td><td width=5><td><input type="text" id="user" class="value"></td>
+                <td>User</td><td width=5><td><input type="text" id="user" class="value"></td>
                 <td width=60></td>
-                <td class="translate">Watch devices</td><td><input id="useDevices" class="value" type="checkbox"></td>
+                <td>Watch devices</td><td><input id="useDevices" class="value" type="checkbox"></td>
             </tr>
             <tr>
-                <td class="translate">Password</td><td width=5><td><input type="password" id="password" value="true" class="value"></td>
+                <td>Password</td><td width=5><td><input type="password" id="password" value="true" class="value"></td>
                 <td width=60></td>
-                <td class="translate">Use phonebook</td><td><input id="usePhonebook" class="value" type="checkbox"></td>
+                <td>Use phonebook</td><td><input id="usePhonebook" class="value" type="checkbox"></td>
             </tr>
             <tr>
-                <td class="translate">Polling interval (ms)</td><td width=5><td><input type="text" id="pollingInterval" class="value"></td>
+                <td>Polling interval (ms)</td><td width=5><td><input type="text" id="pollingInterval" class="value"></td>
             </tr>
 
-            <!--tr><td class="translate">Use CallMonitor</td><td><input id="useCallMonitor" class="value" type="checkbox"></td></tr>
-            <tr><td class="translate">Watch devices</td><td><input id="useDevices" class="value" type="checkbox"></td></tr>
-            <tr><td class="translate">Use phonebook</td><td><input id="usePhonebook" class="value" type="checkbox"></td></tr-->
-            <tr><td><button id="find"><span class="translate">Find a device</span></button></td><tr>
+            <tr><td><button id="find"><span >Find a device</span></button></td><tr>
         </table>
     </div>
-    <!--table>
-        <td><button id="find"><span class="translate">Find a device</span></button></td>
-    </table-->
-    <!--div style="padding: 10px"></div-->
 
-    <h1 class="translate">AddDevice</h1>
+
+    <h1>AddDevice</h1>
     <table id="devices"></table><div id="pager-devices"></div>
     <div id="dialog-search" title="Select a device"></div>
 </div>
